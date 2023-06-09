@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/lstyle.css') }}">
+
+</head>
+<body>
+    <h1 id="title">Logs for the Locker System</h1>
+    {% for user in user_data %}
+        <div>
+            <img src="data:image/jpeg;base64,{{ user['image'] }}" />
+            <h2>{{ user['name'] }}</h2>
+            <p>{{ user['time'] }}</p>
+        </div>
+    {% endfor %}
+</body>
+<script>
+    setInterval(function(){
+      location.reload();
+    }, 1000); // 5000 milliseconds = 5 seconds
+  </script>
+</html>
